@@ -1,12 +1,11 @@
-// create web server with express and body-parser
+// create web server with express 
 const express = require('express');
-const bodyParser = require('body-parser');
 const app = express();
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-// create a variable to store the comments
-let comments = [];
-// create a route to get all comments
-app.get('/comments', (req, res) => {
-  res.json(comments);
+const port = 3000;
+app.get('/', (req, res) => {
+    res.send('Hello, World!');
+});
+
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
 });
